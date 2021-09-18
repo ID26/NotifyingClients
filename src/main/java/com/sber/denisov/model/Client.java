@@ -1,36 +1,31 @@
 package com.sber.denisov.model;
 
+import java.math.BigInteger;
 import java.time.LocalDate;
 import java.util.Objects;
 
 public class Client {
+    private static long countId = 0;
+    private long id;
     private String serName;
     private String givenName;
     private String patronymic;
+    private String telephoneNumber;
+    private String emailAddress;
     private LocalDate dateOfBirth;
     private Address address;
+    private Passport passport;
 
-    public Client(String serName, String givenName, String patronymic, LocalDate dateOfBirth) {
+    public Client(String serName, String givenName, String patronymic, String telephoneNumber, String emailAddress, LocalDate dateOfBirth, Address address, Passport passport) {
+        this.id = countId++;
         this.serName = serName;
         this.givenName = givenName;
         this.patronymic = patronymic;
+        this.telephoneNumber = telephoneNumber;
+        this.emailAddress = emailAddress;
         this.dateOfBirth = dateOfBirth;
-    }
-
-    public Client() {
-
-    }
-
-    public String getPersonString(){
-        return serName+" "+givenName;
-    }
-
-    public Address getAddress() {
-        return address;
-    }
-
-    public void setAddress(Address address) {
         this.address = address;
+        this.passport = passport;
     }
 
     public String getSerName() {
@@ -57,6 +52,22 @@ public class Client {
         this.patronymic = patronymic;
     }
 
+    public String getTelephoneNumber() {
+        return telephoneNumber;
+    }
+
+    public void setTelephoneNumber(String telephoneNumber) {
+        this.telephoneNumber = telephoneNumber;
+    }
+
+    public String getEmailAddress() {
+        return emailAddress;
+    }
+
+    public void setEmailAddress(String emailAddress) {
+        this.emailAddress = emailAddress;
+    }
+
     public LocalDate getDateOfBirth() {
         return dateOfBirth;
     }
@@ -65,15 +76,20 @@ public class Client {
         this.dateOfBirth = dateOfBirth;
     }
 
-    @Override
-    public String toString() {
-        return "Person{" +
-                "serName='" + serName + '\'' +
-                ", givenName='" + givenName + '\'' +
-                ", patronymic='" + patronymic + '\'' +
-                ", dateOfBirth=" + dateOfBirth +
-                ", address=" + address +
-                '}';
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    public Passport getPassport() {
+        return passport;
+    }
+
+    public void setPassport(Passport passport) {
+        this.passport = passport;
     }
 
     @Override
@@ -81,15 +97,34 @@ public class Client {
         if (this == o) return true;
         if (!(o instanceof Client)) return false;
         Client client = (Client) o;
-        return Objects.equals(serName, client.serName) &&
+        return id == client.id &&
+                Objects.equals(serName, client.serName) &&
                 Objects.equals(givenName, client.givenName) &&
                 Objects.equals(patronymic, client.patronymic) &&
+                Objects.equals(telephoneNumber, client.telephoneNumber) &&
+                Objects.equals(emailAddress, client.emailAddress) &&
                 Objects.equals(dateOfBirth, client.dateOfBirth) &&
-                Objects.equals(address, client.address);
+                Objects.equals(address, client.address) &&
+                Objects.equals(passport, client.passport);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(serName, givenName, patronymic, dateOfBirth, address);
+        return Objects.hash(id, serName, givenName, patronymic, telephoneNumber, emailAddress, dateOfBirth, address, passport);
+    }
+
+    @Override
+    public String toString() {
+        return "Client{" +
+                "id=" + id +
+                ", serName='" + serName + '\'' +
+                ", givenName='" + givenName + '\'' +
+                ", patronymic='" + patronymic + '\'' +
+                ", telephoneNumber='" + telephoneNumber + '\'' +
+                ", emailAddress='" + emailAddress + '\'' +
+                ", dateOfBirth=" + dateOfBirth +
+                ", address=" + address +
+                ", passport=" + passport +
+                '}';
     }
 }
