@@ -7,9 +7,6 @@ public class PassportOffice {
     private String officeAreaId;
     private String officeName;
 
-    public PassportOffice() {
-    }
-
     public PassportOffice(long officeId, String officeAreaId, String officeName) {
         this.officeId = officeId;
         this.officeAreaId = officeAreaId;

@@ -1,8 +1,10 @@
 package com.sber.denisov.mail;
 
-public class SmsSender {
+public class SmsSender implements MessageSender {
+    private String telephoneNumber;
 
-    public void sendSms(String telephoneNumber) {
-        System.out.println("Message to telephone");
+    @Override
+    public boolean sendMessage(Message message) {
+        return false;
     }
 }

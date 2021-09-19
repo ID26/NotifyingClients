@@ -1,4 +1,4 @@
-package com.sber.denisov.model;
+package com.sber.denisov.mail;
 
 public class MessagesSchedule {
 }

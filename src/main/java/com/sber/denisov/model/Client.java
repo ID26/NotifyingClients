@@ -1,7 +1,10 @@
 package com.sber.denisov.model;
 
-import java.math.BigInteger;
+import com.sber.denisov.model.cards.BankCard;
+
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Client {
@@ -26,6 +29,10 @@ public class Client {
         this.dateOfBirth = dateOfBirth;
         this.address = address;
         this.passport = passport;
+    }
+
+    public long getId() {
+        return id;
     }
 
     public String getSerName() {

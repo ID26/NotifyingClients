@@ -1,13 +1,18 @@
 package com.sber.denisov.dao;
 
 
+import com.sber.denisov.exception.DaoException;
+import com.sber.denisov.model.Client;
 
-import java.util.List;
 
 public interface ClientDao {
-    Long saveClient(StudentOrder so) throws DaoException;
+    @StorageType
+    Long saveClient(Client client) throws DaoException;
 
-    List<StudentOrder> getGetClient() throws DaoException;
+    Client getClient(Long id) throws DaoException;
+//
+//    List<StudentOrder> getGetClient() throws DaoException;
+
 }
 
 

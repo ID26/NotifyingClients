@@ -17,10 +17,6 @@ public class Address {
         this.apartment = apartment;
     }
 
-    public Address() {
-
-    }
-
     public String getPostCode() {
         return postCode;
     }

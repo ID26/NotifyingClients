@@ -60,6 +60,6 @@ public class CreditCard extends BankCard {
                 ", firstControlDate=" + firstControlDate +
                 ", secondControlDate=" + secondControlDate +
                 ", taxFreePeriod=" + taxFreePeriod +
-                super.toString()  + "} ";
+                super.toString() + "} ";
     }
 }

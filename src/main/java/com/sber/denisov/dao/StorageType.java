@@ -1,4 +1,4 @@
-package com.sber.denisov.model;
+package com.sber.denisov.dao;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

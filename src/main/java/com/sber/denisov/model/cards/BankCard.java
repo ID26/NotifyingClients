@@ -1,8 +1,7 @@
 package com.sber.denisov.model.cards;
 
+
 import com.sber.denisov.model.Client;
-
-
 
 import java.time.LocalDate;
 import java.util.Objects;
@@ -139,7 +138,7 @@ public abstract class BankCard {
 
     @Override
     public String toString() {
-        return  "owner='" + owner + '\'' +
+        return "owner='" + owner + '\'' +
                 ", cardAssociationName='" + cardAssociationName + '\'' +
                 ", cardNumber='" + cardNumber + '\'' +
                 ", nameOnCard='" + nameOnCard + '\'' +
