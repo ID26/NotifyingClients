@@ -1,18 +1,20 @@
 package com.sber.denisov.model.cards;
 
 import com.sber.denisov.model.Client;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 
+@Component
 public class CreditCard extends BankCard {
     private long creditLimit;
     private int firstControlDate;
     private int secondControlDate;
     private int taxFreePeriod;
 
-    public CreditCard() {
-    }
 
+    @Autowired
     public CreditCard(Client owner, String cardAssociationName, String cardNumber, String nameOnCard, String billingAddress, LocalDate validFrom, LocalDate expiryDate, String cardVerificationCode, int dailyWithdrawalLimit, long balance, long creditLimit, int firstControlDate, int secondControlDate, int taxFreePeriod) {
         super(owner, cardAssociationName, cardNumber, nameOnCard, billingAddress, validFrom, expiryDate, cardVerificationCode, dailyWithdrawalLimit, balance);
         this.creditLimit = creditLimit;

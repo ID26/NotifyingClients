@@ -1,12 +1,15 @@
 package com.sber.denisov.model;
 
 import com.sber.denisov.model.cards.BankCard;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+@Component
 public class Client {
     private static long countId = 0;
     private long id;
@@ -19,6 +22,7 @@ public class Client {
     private Address address;
     private Passport passport;
 
+    @Autowired
     public Client(String serName, String givenName, String patronymic, String telephoneNumber, String emailAddress, LocalDate dateOfBirth, Address address, Passport passport) {
         this.id = countId++;
         this.serName = serName;

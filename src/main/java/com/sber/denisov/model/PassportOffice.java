@@ -1,12 +1,17 @@
 package com.sber.denisov.model;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import java.util.Objects;
 
+@Component
 public class PassportOffice {
     private long officeId;
     private String officeAreaId;
     private String officeName;
 
+    @Autowired
     public PassportOffice(long officeId, String officeAreaId, String officeName) {
         this.officeId = officeId;
         this.officeAreaId = officeAreaId;

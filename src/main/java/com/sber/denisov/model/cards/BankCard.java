@@ -2,10 +2,13 @@ package com.sber.denisov.model.cards;
 
 
 import com.sber.denisov.model.Client;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 import java.util.Objects;
 
+@Component
 public abstract class BankCard {
     private Client owner;
     private String cardAssociationName;
@@ -18,9 +21,8 @@ public abstract class BankCard {
     private int dailyWithdrawalLimit;
     private long balance;
 
-    public BankCard() {
-    }
 
+    @Autowired
     public BankCard(Client owner, String cardAssociationName, String cardNumber, String nameOnCard, String billingAddress, LocalDate validFrom, LocalDate expiryDate, String cardVerificationCode, int dailyWithdrawalLimit, long balance) {
         this.owner = owner;
         this.cardAssociationName = cardAssociationName;

@@ -1,14 +1,19 @@
 package com.sber.denisov.model;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import java.time.LocalDate;
 import java.util.Objects;
 
+@Component
 public class Passport {
     private String passportSeria;
     private String passportNumber;
     private LocalDate issueDate;
     private PassportOffice issueDepartment;
 
+    @Autowired
     public Passport(String passportSeria, String passportNumber, LocalDate issueDate, PassportOffice issueDepartment) {
         this.passportSeria = passportSeria;
         this.passportNumber = passportNumber;

@@ -1,7 +1,11 @@
 package com.sber.denisov.model;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import java.util.Objects;
 
+@Component
 public class Address {
     private String postCode;
     private String street;
@@ -9,6 +13,7 @@ public class Address {
     private String extension;
     private String apartment;
 
+    @Autowired
     public Address(String postCode, String street, String building, String extension, String apartment) {
         this.postCode = postCode;
         this.street = street;
